@@ -1,0 +1,15 @@
+{
+    "name": "dynasty8",
+    "version": "1.0.0",
+    "description": "dynasty8 platform",
+    "dependencies": {
+      "express": "^4.17.1",
+      "mongoose": "^6.2.1",
+      "morgan": "^1.10.0",
+      "cors": "^2.8.5",
+      "dotenv": "^16.0.1"
+    },
+    "scripts": {
+        "start": "nodemon app.js"
+  }
+}
