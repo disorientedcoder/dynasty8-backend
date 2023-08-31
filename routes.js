@@ -32,4 +32,26 @@ router.post("/contactUsForms",(req, res, next) => {
     );
 });
 
+// Route to count submitted documents
+router.get('/countSubmittedForms', async (req, res) => {
+    try {
+        const documentCount = await contactusdata.countDocuments();
+        res.json({ count: documentCount });
+    } catch (error) {
+        res.status(500).json({ error: 'An error occurred while counting documents' });
+    }
+});
+
+// Route to count submitted documents by formType
+router.get('/countSubmittedFormsByFormType', async (req, res) => {
+    try {
+        const formTypeCounts = await contactusdata.aggregate([
+            { $group: { _id: "$formType", count: { $sum: 1 } } }
+        ]);
+        res.json(formTypeCounts);
+    } catch (error) {
+        res.status(500).json({ error: 'An error occurred while counting documents by formType' });
+    }
+});
+
 module.exports = router;

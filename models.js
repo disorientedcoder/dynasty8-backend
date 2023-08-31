@@ -15,13 +15,15 @@ const contactUsFormsSchema = new Schema ({
         availability:{type:String},
         propertyID:{type:String}, //only for smart locks or garage slots
         bankInfo:{type:String}, //only for smart locks or garage slots
+        preferredContactMethod: {type:String}, 
     },
     requestQuote:{
         requestQuoteType:{type:String}, //remote or in person
         requestQuotePropertyType:{type:String}, //type of property
         propertyLocation:{type:String}, //link of location
-        propertyPhotos:{type:String}, //link of images
-        requestSize:{type:String}, //size of warehouse or office
+        propertyPhotos:{type:String}, //link of images,
+        propertyZone:{type:String}, //zone property is in
+        requestInterior:{type:String}, //interior of property, or size of warehouse or office
         jobType:{type:String}, //job type for office request
     },
     purchasePropertyPayment:{type:String,},
@@ -33,6 +35,7 @@ const contactUsFormsSchema = new Schema ({
     },
     interiorTour:{type:String}, //type of interior want to see for tour
     formNote:{type:String,}, // additional notes or questions for the form
+    staffName:{type:String,}, // staff submitting
 }, {
     collection: 'contactUsData',
     timestamps: true
