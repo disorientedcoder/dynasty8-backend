@@ -10,8 +10,7 @@ const contactUsFormsSchema = new Schema ({
         required: true
     },
     clientInformation:{
-        name:{type:String},
-        phoneNumber:{type:String},
+        nameAndNumber:{type:String},
         availability:{type:String},
         propertyID:{type:String}, //only for smart locks or garage slots
         bankInfo:{type:String}, //only for smart locks or garage slots
@@ -30,8 +29,8 @@ const contactUsFormsSchema = new Schema ({
     smartLockType:{type:String}, //remote or in person
     garageSlots:{
         garageSlotsType:{type:String}, //remote or in person
-        currentAmountOfSlots:{type:Number}, //number of current slots
-        amountSlotsWantAdded:{type:Number}, //number of slots added
+        currentAmountOfSlots:{type:String}, //number of current slots
+        amountSlotsWantAdded:{type:String}, //number of slots added
     },
     interiorTour:{type:String}, //type of interior want to see for tour
     formNote:{type:String,}, // additional notes or questions for the form
