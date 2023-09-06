@@ -10,6 +10,6 @@
       "dotenv": "^16.0.1"
     },
     "scripts": {
-        "start": "nodemon app.js"
+        "start": "node app.js"
   }
 }
